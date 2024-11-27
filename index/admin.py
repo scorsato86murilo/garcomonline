@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import LadoEsquerdo, LadoDireito
 
-# Register your models here.
+
+admin.site.register(LadoEsquerdo)
+admin.site.register(LadoDireito)

@@ -1,8 +1,59 @@
 {% extends 'base_index.html' %}
 {% load static %}
-{% block titulo %}index.com{% endblock %}
-{% block head %}{% endblock %}
-{% block body %}
 
-<h1>murilo</h1>
+{% block titulo %}Bar.com{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'index/css/index.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Inserindo as variáveis de configuração diretamente no CSS -->
+<style>
+    .col-md-9 {
+        background-color: {{ lado_esquerdo.background }};
+        color: {{ lado_esquerdo.cor_letra_texto }};
+        border-radius: 2px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-size: 1rem;
+        font-family: {{ lado_esquerdo.estilo_letra_texto }};
+    }
+    .h1esquerda {
+        color: {{ lado_esquerdo.cor_letra_titulo }};
+        font-family: {{ lado_esquerdo.estilo_letra_titulo }};
+    }
+
+    .col-md-3 {
+        background-color: {{ lado_direito.background }};
+        color: {{ lado_direito.cor_letra_texto }};
+        border-radius: 2px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-size: 1rem;
+        font-family: {{ lado_direito.estilo_letra_texto }};
+        text-align: center;
+    }
+    .h1direita {
+        color: {{ lado_direito.cor_letra_titulo }};
+        font-family: {{ lado_direito.estilo_letra_titulo }};
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <!-- Coluna esquerda -->
+        <div class="col-md-9">
+            <h1 class="h1esquerda">Conheça Nosso Club</h1>
+            <p>Vamos nos divertir hoje?.</p>
+        </div>
+
+        <!-- Coluna direita -->
+        <div class="col-md-3">
+            <h1 class="h1direita">Associados</h1>
+            <p>Venha se divertir também</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock %}
