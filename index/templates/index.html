@@ -43,25 +43,30 @@
     <div class="row">
         <!-- Coluna esquerda -->
         <div class="col-md-9">
-            <nav class="navbar">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="{{ lado_esquerdo.logo.url }}" alt="Logo" width="70" height="50" style="border-radius: 1%;">
-                        <h2 class="h2esquerda">Conheça Nosso Club</h2>
-                    </a>
-                </div>
-            </nav>
+            {% if lado_esquerdo %}
+                {% if lado_esquerdo.logo %}
+                    <br>
+            <center><img src="{{ lado_esquerdo.logo.url }}" alt="Logo" width="{{ tamanho.largura }}" height="{{ tamanho.altura }}" class="img-fluid" style="border-radius: 1%; max-width: 100%; "></center>
+                    <h2 class="h2esquerda">
+                        {% if nome %}
+                            {{ nome }}
+                        {% else %}
+                            Nome não disponível
+                        {% endif %}
+                    </h2>
+                {% endif %}
+            {% else %}
+                <p>Informações do lado esquerdo não disponíveis.</p>
+            {% endif %}
 
-
-
-
-            <p>Vamos nos divertir hoje?.</p>
+            <p class="texto-esquerdo"><h6>{{ lado_esquerdo.texto }}</h6></p>
         </div>
 
         <!-- Coluna direita -->
         <div class="col-md-3">
-            <h2 class="h2direita">Associados</h2>
-            <p>Venha se divertir também</p>
+            <br>
+            <h2 class="h2direita">{{ lado_direito.titulo }}</h2>
+            <p class="texto-direito"><h6>{{ lado_direito.texto }}</h6></p>
         </div>
     </div>
 </div>
