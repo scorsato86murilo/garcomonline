@@ -6,6 +6,7 @@ def index(request):
         lado_esquerdo = LadoEsquerdo.objects.first()
         lado_direito = LadoDireito.objects.first()
 
+
         contexto = {
             'lado_esquerdo': lado_esquerdo,
             'lado_direito': lado_direito,

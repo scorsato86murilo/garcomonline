@@ -14,10 +14,10 @@
         color: {{ lado_esquerdo.cor_letra_texto }};
         border-radius: 2px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-size: 1rem;
+        font-size: 0.7rem;
         font-family: {{ lado_esquerdo.estilo_letra_texto }};
     }
-    .h1esquerda {
+    .h2esquerda {
         color: {{ lado_esquerdo.cor_letra_titulo }};
         font-family: {{ lado_esquerdo.estilo_letra_titulo }};
     }
@@ -27,11 +27,11 @@
         color: {{ lado_direito.cor_letra_texto }};
         border-radius: 2px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-size: 1rem;
+        font-size: 0,7rem;
         font-family: {{ lado_direito.estilo_letra_texto }};
         text-align: center;
     }
-    .h1direita {
+    .h2direita {
         color: {{ lado_direito.cor_letra_titulo }};
         font-family: {{ lado_direito.estilo_letra_titulo }};
     }
@@ -43,13 +43,24 @@
     <div class="row">
         <!-- Coluna esquerda -->
         <div class="col-md-9">
-            <h1 class="h1esquerda">Conheça Nosso Club</h1>
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="{{ lado_esquerdo.logo.url }}" alt="Logo" width="70" height="50" style="border-radius: 1%;">
+                        <h2 class="h2esquerda">Conheça Nosso Club</h2>
+                    </a>
+                </div>
+            </nav>
+
+
+
+
             <p>Vamos nos divertir hoje?.</p>
         </div>
 
         <!-- Coluna direita -->
         <div class="col-md-3">
-            <h1 class="h1direita">Associados</h1>
+            <h2 class="h2direita">Associados</h2>
             <p>Venha se divertir também</p>
         </div>
     </div>
