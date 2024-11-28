@@ -42,3 +42,7 @@ class TamanhoImg(models.Model):
 
     def __str__(self):
         return f"Altura: {self.altura}, Largura: {self.largura}"
+
+
+class TituloPagina(models.Model):
+    titulo = models.CharField(max_length=70, default='Bem Vindo!')
