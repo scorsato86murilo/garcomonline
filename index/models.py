@@ -36,7 +36,7 @@ class LadoDireito(models.Model):
 
 
 class TamanhoImg(models.Model):
-    altura = models.IntegerField(default=0)  # Altura da imagem, valor padrão 40
+    altura = models.IntegerField(default=0)  # Altura da imagem, valor padrão 0
     largura = models.IntegerField(default=40)  # Largura da imagem, valor padrão 40
 
 
@@ -49,3 +49,15 @@ class TituloPagina(models.Model):
 
     def __str__(self):
         return self.titulo
+
+
+class Avisos(models.Model):
+    img_aviso = models.ImageField(upload_to='aviso_index')
+    altura = models.IntegerField(default=0)  # Altura da imagem, valor padrão 0
+    largura = models.IntegerField(default=40)  # Largura da imagem, valor padrão 40
+    texto = models.TextField(default='Texto do lado direito')
+    estilo_letra_titulo = models.CharField(max_length=100, default='Arial, sans-serif')
+    cor_letra_titulo = models.CharField(max_length=7, default='#000000')
+
+    def __str__(self):
+        return self.texto

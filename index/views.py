@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import LadoEsquerdo, LadoDireito, NomeEstabelecimento, TamanhoImg, TituloPagina
+from .models import LadoEsquerdo, LadoDireito, NomeEstabelecimento, TamanhoImg, TituloPagina, Avisos
 
 
 def index(request):
@@ -9,6 +9,7 @@ def index(request):
         nome = NomeEstabelecimento.objects.first()
         tamanho = TamanhoImg.objects.first()
         titulo =TituloPagina.objects.first()
+        aviso = Avisos.objects.first()
 
 
         contexto = {
@@ -17,6 +18,7 @@ def index(request):
             'nome': nome,
             'tamanho': tamanho,
             'titulo': titulo,
+            'aviso': aviso
         }
         return render(request, 'index.html', contexto)
 
