@@ -61,3 +61,8 @@ class Avisos(models.Model):
 
     def __str__(self):
         return self.texto
+
+
+class NavBar(models.Model):
+    background = models.CharField(max_length=7, default='#c0c0c0')
+    cor_letra_titulo = models.CharField(max_length=7, default='#000000')

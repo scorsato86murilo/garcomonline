@@ -27,7 +27,7 @@
         color: {{ lado_direito.cor_letra_texto }};
         border-radius: 2px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-size: 0,7rem;
+        font-size: 0.7rem;
         font-family: {{ lado_direito.estilo_letra_texto }};
         text-align: center;
     }
@@ -35,6 +35,9 @@
         color: {{ lado_direito.cor_letra_titulo }};
         font-family: {{ lado_direito.estilo_letra_titulo }};
     }
+
+
+
 </style>
 {% endblock %}
 
@@ -42,12 +45,13 @@
 <div class="container-fluid">
     <div class="row">
         <!-- Coluna esquerda -->
-        <div class="col-md-9">
+        <div class="col-md-9"> <br>
+
+
             {% if lado_esquerdo %}
                 {% if lado_esquerdo.logo %}
-                    <br>
-            <center><img src="{{ lado_esquerdo.logo.url }}" alt="Logo" width="{{ tamanho.largura }}" height="{{ tamanho.altura }}" class="img-fluid" style="border-radius: 1%; max-width: 100%; "></center>
-                    <h2 class="h2esquerda">
+                    <center><img src="{{ lado_esquerdo.logo.url }}" alt="Logo" width="{{ tamanho.largura }}" height="{{ tamanho.altura }}" class="img-fluid" style="border-radius: 1%; max-width: 100%; "></center>
+                    <br><h2 class="h2esquerda">
                         {% if nome %}
                             {{ nome }}
                         {% else %}
@@ -60,15 +64,14 @@
             {% endif %}
 
             <p class="texto-esquerdo"><h6>{{ lado_esquerdo.texto }}</h6></p>
-     <hr>
-<h6>
-                <a href="#"><span class="badge text-bg-dark">Conheça nosso espaço</span></a>
-                <a href="#"><span class="badge text-bg-dark">Cardápio</span></a>
-                <a href="#"><span class="badge text-bg-dark">Registre-se</span></a>
-                <a href="#"><span class="badge text-bg-dark">Área de membros</span></a>
-</h6>
-        </div>
 
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button">Área de membros</button>
+                <button class="btn btn-primary" type="button">Seja Membro</button>
+            </div>
+
+  <hr>
+        </div>
 
         <!-- Coluna direita -->
         <div class="col-md-3">
@@ -77,19 +80,16 @@
             <hr>
             <p class="texto-direito"><h6>{{ lado_direito.texto }}</h6></p>
 
+            <center>
+                <div class="card" style="width: 15rem; background-color: rgba(255, 255, 255, 0.5); border: none;">
+                    <img src="{{ aviso.img_aviso.url }}" alt="Logo" width="{{ aviso.largura }}" height="{{ aviso.altura }}" class="img-fluid" style="border-radius: 1%; max-width: 100%; ">
+                    <div class="card-body">
+                        <p class="card-text">{{ aviso.texto }}</p>
+                    </div>
+                </div><br>
+            </center>
 
-  <center>
-      <div class="card" style="width: 15rem; background-color: rgba(255, 255, 255, 0.5); border: none;">
-           <img src="{{ aviso.img_aviso.url }}" alt="Logo" width="{{ aviso.largura }}" height="{{ aviso.altura }}" class="img-fluid" style="border-radius: 1%; max-width: 100%; ">
-                <div class="card-body">
-                    <p class="card-text">{{ aviso.texto }}</p>
-                </div>
-      </div>
-  </center>
-
-
-
-<br><br><br><hr>
+            <br><br><br><hr>
         </div>
     </div>
 </div>
