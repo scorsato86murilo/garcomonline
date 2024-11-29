@@ -18,7 +18,7 @@ def index(request):
             'nome': nome,
             'tamanho': tamanho,
             'titulo': titulo,
-            'aviso': aviso
+            'aviso': aviso,
         }
         return render(request, 'index.html', contexto)
 
