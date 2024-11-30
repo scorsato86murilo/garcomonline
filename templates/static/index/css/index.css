@@ -1,3 +1,24 @@
+/* Estilo geral para os links */
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
 
+/* Estilo para os links com marca-texto fixo */
+.links a {
+    text-decoration: none;          /* Remove o sublinhado do link */
+    padding: 10px 20px;             /* Espaçamento interno */
+    font-size: 16px;                /* Tamanho da fonte */
+    color: #00796b;                 /* Cor do texto */
+    background-color: #e0f7fa;      /* Cor de fundo azul claríssimo (marca-texto fixo) */
+    border-radius: 5px;             /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave se precisar */
+}
 
-
+/* Efeito ao passar o mouse (pode ser opcional) */
+.links a:hover {
+    background-color: #b2ebf2;      /* Um tom um pouco mais escuro de azul claríssimo */
+    color: #004d40;                  /* Cor do texto quando passa o mouse */
+}
