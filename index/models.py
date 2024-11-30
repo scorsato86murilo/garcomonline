@@ -9,12 +9,12 @@ class NomeEstabelecimento(models.Model):
 
 
 class LadoEsquerdo(models.Model):
-    background = models.CharField(max_length=7, default='#FFFFFF')
+    background = models.CharField(max_length=20, default='#FFFFFF')
     texto = models.TextField(default="Texto do lado esquerdo")
     estilo_letra_titulo = models.CharField(max_length=100, default='Arial, sans-serif')
-    cor_letra_titulo = models.CharField(max_length=7, default='#000000')
+    cor_letra_titulo = models.CharField(max_length=20, default='#000000')
     estilo_letra_texto = models.CharField(max_length=100, default='Arial, sans-serif')
-    cor_letra_texto = models.CharField(max_length=7, default='#333333')
+    cor_letra_texto = models.CharField(max_length=20, default='#333333')
     logo = models.ImageField(upload_to='img_logo_index')
 
     def __str__(self):
@@ -22,13 +22,13 @@ class LadoEsquerdo(models.Model):
 
 
 class LadoDireito(models.Model):
-    background = models.CharField(max_length=7, default='#FFFFFF')
+    background = models.CharField(max_length=20, default='#FFFFFF')
     titulo = models.CharField(max_length=100, default='Bem Vindo!')
     texto = models.TextField(default='Texto do lado direito')
     estilo_letra_titulo = models.CharField(max_length=100, default='Arial, sans-serif')
-    cor_letra_titulo = models.CharField(max_length=7, default='#333333')
+    cor_letra_titulo = models.CharField(max_length=20, default='#333333')
     estilo_letra_texto = models.CharField(max_length=100, default='Arial, sans-serif')
-    cor_letra_texto = models.CharField(max_length=7, default='#000000')
+    cor_letra_texto = models.CharField(max_length=20, default='#000000')
 
 
     def __str__(self):
@@ -57,12 +57,12 @@ class Avisos(models.Model):
     largura = models.IntegerField(default=40)  # Largura da imagem, valor padrão 40
     texto = models.TextField(default='Texto do lado direito')
     estilo_letra_titulo = models.CharField(max_length=100, default='Arial, sans-serif')
-    cor_letra_titulo = models.CharField(max_length=7, default='#000000')
+    cor_letra_titulo = models.CharField(max_length=20, default='#000000')
 
     def __str__(self):
         return self.texto
 
 
 class NavBar(models.Model):
-    background = models.CharField(max_length=7, default='#c0c0c0')
-    cor_letra_titulo = models.CharField(max_length=7, default='#000000')
+    background = models.CharField(max_length=20, default='#c0c0c0')
+    cor_letra_titulo = models.CharField(max_length=20, default='#000000')
